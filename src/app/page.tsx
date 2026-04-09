@@ -46,9 +46,9 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="object-cover opacity-40">
           <Image
-            src="/oficina-hero.jpg"
+            src="/oficina-hero2.jpg"
             alt="Oficina S.I Auto"
             fill
             className="object-cover"
