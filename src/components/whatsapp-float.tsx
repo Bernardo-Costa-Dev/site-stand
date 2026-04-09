@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const SALES_WHATSAPP = "351900000000";
+const SALES_WHATSAPP = "351925511320";
 const OFICINA_WHATSAPP = "351911111111";
 
 function WhatsAppIcon() {

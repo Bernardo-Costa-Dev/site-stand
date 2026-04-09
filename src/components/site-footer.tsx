@@ -11,8 +11,8 @@ export function SiteFooter() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Contacto
           </p>
-          <p className="mt-3 text-sm">+351 900 000 000</p>
-          <p className="mt-2 text-sm">geral@siauto.pt</p>
+          <p className="mt-3 text-sm">+351 915 382 782</p>
+          <p className="mt-2 text-sm">autosolidinterest@gmail.com</p>
         </div>
 
         <div>
@@ -27,7 +27,7 @@ export function SiteFooter() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
             Localização
           </p>
-          <p className="mt-3 text-sm">Caldas da Rainha</p>
+          <p className="mt-3 text-sm">Estrada Nacional N° 8, Q.ta do Mota, 2460-194 Alfeizerão</p>
         </div>
       </div>
 

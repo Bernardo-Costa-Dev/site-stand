@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { SanityImageSource } from "@sanity/image-url";
 import { client } from "@/lib/sanity/client";
 import { urlFor } from "@/lib/sanity/image";
+import { VehicleFiltersBar } from "@/components/vehicle-filters-bar";
 
 type Vehicle = {
   _id: string;
@@ -17,7 +19,7 @@ type Vehicle = {
   brand?: string;
   model?: string;
   featured?: boolean;
-  images?: unknown[];
+  images?: SanityImageSource[];
   description?: string;
 };
 
@@ -39,30 +41,51 @@ const vehiclesQuery = `
   }
 `;
 
+function buildOptions(values: Array<string | undefined>) {
+  return [...new Set(values.filter(Boolean))]
+    .sort((a, b) => a!.localeCompare(b!, "pt"))
+    .map((value) => ({
+      label: value as string,
+      value: (value as string).toLowerCase().replace(/\s+/g, "-"),
+    }));
+}
+
 export default async function ViaturasPage() {
   const vehicles = await client.fetch<Vehicle[]>(vehiclesQuery);
+
+  const brandOptions = buildOptions(vehicles.map((vehicle) => vehicle.brand));
+  const modelOptions = buildOptions(vehicles.map((vehicle) => vehicle.model));
+  const fuelOptions = buildOptions(vehicles.map((vehicle) => vehicle.fuel));
+  const transmissionOptions = buildOptions(
+    vehicles.map((vehicle) => vehicle.transmission)
+  );
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-emerald-50 to-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
             Catálogo
           </p>
-          <h1 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Viaturas disponíveis</h1>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+            Viaturas disponíveis
+          </h1>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-            Explore o stock da S.I Auto com apresentação clara, moderna e focada no contacto rápido.
+            Explore o stock da S.I Auto com apresentação clara, moderna e focada
+            no contacto rápido.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
-        <div className="mb-8 grid gap-4 rounded-3xl border border-zinc-200 bg-zinc-50 p-5 md:grid-cols-5">
-          <div className="rounded-2xl bg-white px-4 py-3 text-sm text-zinc-500">Marca</div>
-          <div className="rounded-2xl bg-white px-4 py-3 text-sm text-zinc-500">Preço</div>
-          <div className="rounded-2xl bg-white px-4 py-3 text-sm text-zinc-500">Ano</div>
-          <div className="rounded-2xl bg-white px-4 py-3 text-sm text-zinc-500">Combustível</div>
-          <div className="rounded-2xl bg-white px-4 py-3 text-sm text-zinc-500">Caixa</div>
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <div className="mb-8">
+          <VehicleFiltersBar
+            total={vehicles.length}
+            brands={brandOptions}
+            models={modelOptions}
+            fuels={fuelOptions}
+            transmissions={transmissionOptions}
+          />
         </div>
 
         {vehicles.length === 0 ? (
@@ -102,17 +125,29 @@ export default async function ViaturasPage() {
 
                   <div className="p-5">
                     <div className="mb-3 flex items-start justify-between gap-4">
-                      <h2 className="text-xl font-semibold leading-tight">{vehicle.title}</h2>
+                      <h2 className="text-xl font-semibold leading-tight">
+                        {vehicle.title}
+                      </h2>
                       <p className="whitespace-nowrap text-lg font-bold text-emerald-700">
                         {vehicle.price?.toLocaleString("pt-PT")} €
                       </p>
                     </div>
 
                     <div className="mb-4 grid grid-cols-2 gap-2 text-sm text-zinc-600">
-                      <p><span className="text-zinc-500">Ano:</span> {vehicle.year}</p>
-                      <p><span className="text-zinc-500">Km:</span> {vehicle.mileage?.toLocaleString("pt-PT")}</p>
-                      <p><span className="text-zinc-500">Comb.:</span> {vehicle.fuel}</p>
-                      <p><span className="text-zinc-500">Caixa:</span> {vehicle.transmission}</p>
+                      <p>
+                        <span className="text-zinc-500">Ano:</span> {vehicle.year}
+                      </p>
+                      <p>
+                        <span className="text-zinc-500">Km:</span>{" "}
+                        {vehicle.mileage?.toLocaleString("pt-PT")}
+                      </p>
+                      <p>
+                        <span className="text-zinc-500">Comb.:</span> {vehicle.fuel}
+                      </p>
+                      <p>
+                        <span className="text-zinc-500">Caixa:</span>{" "}
+                        {vehicle.transmission}
+                      </p>
                     </div>
 
                     <p className="mb-5 min-h-[72px] text-sm leading-6 text-zinc-600">

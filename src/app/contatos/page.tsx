@@ -2,18 +2,18 @@ export default function ContactosPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-emerald-50 to-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
             Contactos
           </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight">Fale connosco</h1>
+          <h1 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Fale connosco</h1>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600">
             Entre em contacto com a S.I Auto para mais informações sobre viaturas ou serviços de oficina.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
@@ -21,10 +21,10 @@ export default function ContactosPage() {
 
               <div className="mt-8 space-y-4 text-zinc-700">
                 <p><span className="font-semibold">Empresa:</span> S.I Auto | Solid Interest</p>
-                <p><span className="font-semibold">Telefone:</span> +351 900 000 000</p>
-                <p><span className="font-semibold">Email:</span> geral@siauto.pt</p>
+                <p><span className="font-semibold">Telefone:</span> +351 915 382 782</p>
+                <p><span className="font-semibold">Email:</span> autosolidinterest@gmail.com</p>
                 <p><span className="font-semibold">Redes Sociais:</span> Facebook | Instagram</p>
-                <p><span className="font-semibold">Morada:</span> Rua Exemplo, Caldas da Rainha</p>
+                <p><span className="font-semibold">Morada:</span> Estrada Nacional N° 8, Q.ta do Mota, 2460-194 Alfeizerão</p>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">

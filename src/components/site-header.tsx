@@ -23,7 +23,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/75 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:py-1">
         <Link href="/" className="shrink-0">
             <Image
                 src="/logo-siauto.png"
