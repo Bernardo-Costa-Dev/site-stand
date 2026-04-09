@@ -229,7 +229,7 @@ export default async function VehiclePage({ params }: Props) {
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="tel:+351900000000"
+                  href="tel:+351915382782"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
                 >
                   <Phone className="h-4 w-4" />
@@ -237,7 +237,7 @@ export default async function VehiclePage({ params }: Props) {
                 </a>
 
                 <a
-                  href="https://wa.me/351900000000"
+                  href="https://wa.me/351925511320"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
