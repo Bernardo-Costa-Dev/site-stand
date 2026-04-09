@@ -66,7 +66,7 @@ export default async function Home() {
             </p>
 
             <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-              Viaturas selecionadas com serviço completo e imagem profissional.
+              Viaturas selecionadas com serviço completo.
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-200">
@@ -202,8 +202,7 @@ export default async function Home() {
               Viaturas em destaque
             </h2>
             <p className="mt-3 max-w-2xl text-zinc-600">
-              A homepage foi preparada para mostrar até 12 viaturas, tal como pedido
-              pelo cliente.
+              As nossas viaturas selecionadas, com informação detalhada e contacto facilitado.
             </p>
           </div>
 

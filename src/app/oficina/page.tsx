@@ -55,14 +55,12 @@ export default function OficinaPage() {
               </p>
 
               <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Assistência automóvel com imagem profissional, contacto simples e
+                Assistência automóvel, contacto simples e
                 foco na confiança.
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
-                Uma área criada para valorizar os serviços da oficina, facilitar
-                pedidos de marcação e reforçar a credibilidade do stand junto do
-                cliente.
+                Disponha dos nossos serviços de manutenção e apoio pós-venda, com um processo de marcação simples e claro.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -105,20 +103,18 @@ export default function OficinaPage() {
                 </h2>
 
                 <p className="mt-4 text-sm leading-7 text-zinc-300">
-                  Esta página ajuda a transmitir continuidade de serviço,
-                  organização e confiança. Mesmo em versão demo, já mostra ao
-                  cliente uma experiência credível e bem apresentada.
+                  Continuidade de serviço, apoio e manutenção.
                 </p>
 
                 <div className="mt-6 space-y-3">
                   <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-200">
-                    Horário demo: Seg. a Sex. · 09:00 às 18:30
+                    Horário: Seg. a Sex. · 09:00 às 18:30
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-200">
                     Processo de marcação simples e claro
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-200">
-                    Preparado para futura integração real
+                    Marque as vezes que precisar, sem complicações
                   </div>
                 </div>
               </div>
