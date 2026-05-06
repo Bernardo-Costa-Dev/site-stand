@@ -1,10 +1,18 @@
+import Image from "next/image";
+
 export function SiteFooter() {
   return (
     <footer className="bg-zinc-900 text-zinc-300">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
-          <p className="text-lg font-semibold text-white">S.I Auto</p>
-          <p className="mt-2 text-sm text-zinc-400">Solid Interest</p>
+          <Image
+            src="/logo-siauto.png"
+            alt="S.I Auto"
+            width={280}
+            height={120}
+            className="h-16 w-auto"
+          />
+          <p className="mt-1 text-sm text-zinc-400">Solid Interest Auto</p>
         </div>
 
         <div>

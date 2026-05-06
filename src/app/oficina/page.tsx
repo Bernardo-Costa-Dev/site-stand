@@ -3,34 +3,19 @@ import { OficinaBookingForm } from "@/components/oficina-booking-form";
 
 const services = [
   {
-    title: "Revisões",
-    description:
-      "Manutenção periódica para garantir fiabilidade, desempenho e segurança no dia a dia.",
+    title: "Serviço de mecânica geral",
+    description: "Inclui os principais serviços de manutenção e acompanhamento técnico.",
+    items: ["Revisões", "Mudança de óleo e filtro", "Travões", "Suspensão"],
   },
   {
-    title: "Mudança de óleo e filtros",
-    description:
-      "Serviço essencial para preservar o motor e manter a performance do veículo.",
+    title: "Pneus",
+    description: "Serviços ligados à segurança, estabilidade e bom comportamento do veículo.",
+    items: ["Troca de pneus", "Alinhamento de direção"],
   },
   {
     title: "Diagnóstico",
-    description:
-      "Análise técnica para identificar avarias e antecipar problemas mecânicos.",
-  },
-  {
-    title: "Travões",
-    description:
-      "Verificação e manutenção de um dos sistemas mais importantes para a segurança.",
-  },
-  {
-    title: "Suspensão",
-    description:
-      "Intervenções focadas em conforto, estabilidade e controlo em estrada.",
-  },
-  {
-    title: "Mecânica geral",
-    description:
-      "Serviços diversos com acompanhamento profissional e atenção ao detalhe.",
+    description: "Análise técnica para identificar avarias e antecipar problemas.",
+    items: [],
   },
 ];
 
@@ -146,10 +131,23 @@ export default function OficinaPage() {
               className="rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="mb-4 h-1.5 w-14 rounded-full bg-emerald-500" />
-              <h3 className="text-lg font-semibold">{service.title}</h3>
+
+              <h3 className="text-xl font-semibold">{service.title}</h3>
+
               <p className="mt-3 text-sm leading-6 text-zinc-600">
                 {service.description}
               </p>
+
+              {service.items.length > 0 && (
+                <ul className="mt-5 space-y-2 text-sm text-zinc-700">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
@@ -219,24 +217,9 @@ export default function OficinaPage() {
 
       <section
         id="marcacao"
-        className="border-t border-zinc-200 bg-white/40 py-16"
+        className="border-t border-zinc-200 bg-white/40 py-16 text-center"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-8 max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
-              Pedido de marcação
-            </p>
-
-            <h2 className="mt-2 text-3xl font-bold tracking-tight">
-              Formulário simples para demonstrar a experiência de marcação.
-            </h2>
-
-            <p className="mt-4 text-base leading-7 text-zinc-600">
-              Aqui fica a área principal da página: um formulário organizado,
-              claro e visualmente alinhado com o resto do site.
-            </p>
-          </div>
-
           <OficinaBookingForm />
         </div>
       </section>
