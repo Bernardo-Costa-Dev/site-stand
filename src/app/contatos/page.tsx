@@ -20,7 +20,12 @@ export default function ContactosPage() {
               <h2 className="text-2xl font-bold">Informações</h2>
 
               <div className="mt-8 space-y-4 text-zinc-700">
-                <p><span className="font-semibold">Empresa:</span> S.I Auto | Solid Interest</p>
+                <p>
+                <span className="font-semibold">Stand:</span> S.I Auto 
+              </p>
+              <p>
+                <span className="font-semibold">Empresa:</span> Solid Interest Comércio Auto Unipessoal Lda.
+              </p>
                 <p><span className="font-semibold">Telefone:</span> +351 915 382 782</p>
                 <p><span className="font-semibold">Email:</span> autosolidinterest@gmail.com</p>
                 <p><span className="font-semibold">Redes Sociais:</span> Facebook | Instagram</p>

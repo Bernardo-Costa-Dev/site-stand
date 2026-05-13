@@ -61,17 +61,19 @@ export default async function Home() {
 
         <div className="relative mx-auto grid min-h-[78vh] max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
-              Stand automóvel & oficina
+            <p className="text-sm font-semibold uppercase tracking-[0.65em] text-emerald-300 text-center">
+              O seu stand automóvel
             </p>
 
-            <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-              Viaturas selecionadas com serviço completo.
+            <h2 className="text-5xl font-extrabold uppercase tracking-wide text-white [webkit-text-stroke:2px_#328F52]">
+              Reboque
+            </h2>
+            <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl text-center">
+              Stock Multimarcas para qualquer ocasião
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-200">
-              A S.I Auto junta comércio automóvel e oficina para oferecer uma solução
-              completa, com foco na confiança, proximidade e atendimento personalizado.
+             A S.I Auto dispõe de um vasto stock multimarcas, com acompanhamento personalizado e preparação cuidada de cada viatura para garantir confiança na entrega.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -92,16 +94,16 @@ export default async function Home() {
 
             <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
               <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
-                <p className="text-2xl font-bold text-white">{homepageVehicles.length}</p>
-                <p className="mt-1 text-sm text-zinc-300">Em destaque</p>
+                <p className="text-2xl font-bold text-white">{homepageVehicles.length} Novas Entradas</p>
+                <p className="mt-1 text-sm text-zinc-300">Novas Entradas</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
-                <p className="text-2xl font-bold text-white">Oficina</p>
-                <p className="mt-1 text-sm text-zinc-300">Serviço completo</p>
+                <p className="text-2xl font-bold text-white">Garantia Stand</p>
+                <p className="mt-1 text-sm text-zinc-300">Assistencia pós-venda</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
-                <p className="text-2xl font-bold text-white">100%</p>
-                <p className="mt-1 text-sm text-zinc-300">Profissional</p>
+                <p className="text-2xl font-bold text-white">Pague até 120x</p>
+                <p className="mt-1 text-sm text-zinc-300">Possiblidade de financiamento</p>
               </div>
             </div>
           </div>
@@ -301,46 +303,68 @@ export default async function Home() {
               Sobre a S.I Auto
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight">
-              Uma empresa focada em confiança, proximidade e serviço completo.
+            Um Compromisso Com Pessoas
             </h2>
             <p className="mt-5 leading-8 text-zinc-600">
-              A Solid Interest, através da S.I Auto, dedica-se à comercialização de
-              viaturas e serviços de oficina, oferecendo uma solução completa para quem
-              procura comprar, manter e cuidar do seu automóvel com segurança.
+              A SOLID INTEREST – COMÉRCIO AUTO UNIPESSOAL foi formalizada em maio de 2023, consolidando a experiência e visão empresarial de Vasco Santos, Sócio - Gerente da empresa.
             </p>
             <p className="mt-4 leading-8 text-zinc-600">
-              O objetivo desta presença online é valorizar o stock disponível, facilitar
-              o contacto com os clientes e destacar também a área de oficina.
+              Com um percurso desenvolvido no setor automóvel enquanto empresário em nome individual, Vasco Santos estruturou metodologias de trabalho orientadas para a qualidade, confiança e eficiência, tanto na área da reparação automóvel como no comércio de viaturas.
+            </p>
+            <p className="mt-4 leading-8 text-zinc-600">
+             A empresa reforça ainda a sua oferta com um Serviço de Reboque Rápido a nível nacional, disponível para apoiar particulares, empresas e clientes que necessitem de assistência rápida, segura e profissional.        
+            </p>
+            <p className="mt-4 leading-8 text-zinc-600">
+              A SOLID INTEREST assume-se assim como uma empresa focada em soluções automóveis completas, combinando experiência, responsabilidade e proximidade com o cliente.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-              <h3 className="text-lg font-semibold">Atendimento próximo</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-600">
-                Comunicação clara e acompanhamento em todas as fases.
-              </p>
+         <div className="grid grid-cols-1 gap-4">
+            <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+              <Image
+                src="/stand-image.png"
+                alt="Stand S.I Auto Comércio Auto"
+                width={1535}
+                height={1024}
+                className="h-auto w-full object-cover"
+              />
             </div>
 
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-              <h3 className="text-lg font-semibold">Catálogo atualizado</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-600">
-                Viaturas geridas de forma simples através do painel privado.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="rounded-3xl border border-zinc-200 bg-white p-6">
+                <h3 className="text-center text-lg font-semibold">
+                  Comprometemo-nos
+                </h3>
 
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-              <h3 className="text-lg font-semibold">Serviço de oficina</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-600">
-                Uma área dedicada à manutenção e acompanhamento técnico.
-              </p>
-            </div>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Facilidade de financiamento até 120x
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Viaturas entregues com revisão e IPO
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Garantia de 18 meses
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Viaturas para comércio
+                </p>
+              </div>
 
-            <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-              <h3 className="text-lg font-semibold">Presença profissional</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-600">
-                Um site pensado para causar boa impressão e gerar contactos.
-              </p>
+              <div className="rounded-3xl border border-zinc-200 bg-white p-6">
+                <h3 className="text-center text-lg font-semibold">
+                  Consigo
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Transferência de propriedade
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Aceitamos retoma do antigo carro
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">
+                  ✅ Assistência pós-venda
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -352,54 +376,33 @@ export default async function Home() {
             Oficina
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight">
-            Serviços pensados para acompanhar o cliente para além da compra.
+            O Nosso Serviço Vai Além Da Sua Compra
           </h2>
           <p className="mt-4 text-zinc-600">
-            Inspirada na direção visual e comercial do exemplo que o cliente gostou,
-            esta secção reforça a área técnica da empresa.
+           Um acompanhamento técnico que complementa a experiência do stand e por isso disponibilizamos aos nosso clientes um vasto serviço de assitência mecânica automóvel.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Revisões</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Manutenção periódica e controlo preventivo para maior segurança.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Mecânica geral</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Intervenções técnicas e reparações com foco na fiabilidade do veículo.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold">Diagnóstico</h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Identificação de problemas e apoio técnico para uma decisão rápida.
+              Identificação de problemas e apoio técnico para prevenção de avarias e comportamento anormal do veículo.
             </p>
           </div>
 
           <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Travões e suspensão</h3>
+            <h3 className="text-lg font-semibold"> Revisão Geral - Óleo e Filtros</h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Verificação e manutenção de componentes críticos de segurança.
+              Serviços rápidos para manter o motor em boas condições e manutenção preventiva para melhor durabilidade da sua viatura.           
             </p>
           </div>
 
           <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Óleo e filtros</h3>
+            <h3 className="text-lg font-semibold">Pneus e Travões</h3>
             <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Serviços rápidos para manter o motor em boas condições.
-            </p>
-          </div>
+              Cuidamos da segurança da sua viatura com serviços de substituição de pneus, montagem, equilibragem e verificação do sistema de travagem, garantindo um serviço profissional, rápido e de confiança.
 
-          <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Acompanhamento técnico</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">
-              Uma oficina que complementa a experiência do stand.
             </p>
           </div>
         </div>
@@ -417,7 +420,10 @@ export default async function Home() {
 
             <div className="mt-8 space-y-4 text-zinc-700">
               <p>
-                <span className="font-semibold">Empresa:</span> S.I Auto | Solid Interest
+                <span className="font-semibold">Stand:</span> S.I Auto 
+              </p>
+              <p>
+                <span className="font-semibold">Empresa:</span> Solid Interest Comércio Auto Unipessoal Lda.
               </p>
               <p>
                 <span className="font-semibold">Telefone:</span> +351 915 382 782
@@ -449,14 +455,34 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
-            <iframe
-              title="Mapa localização S.I Auto"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1088.8559639288187!2d-9.107544471294732!3d39.474981994533636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18b3804e9a0d47%3A0x44bc309b2cead288!2sS.I.%20Auto%20(Solid%20Interest%20Com%C3%A9rcio%20Auto%20Unp%20Lda)!5e0!3m2!1sen!2spt!4v1775747214009!5m2!1sen!2spt"
-              className="h-[360px] w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <p className="mb-3 text-center text-sm font-semibold uppercase text-emerald-300">
+                Stand
+              </p>
+
+              <iframe
+                title="Mapa localização S.I Auto"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1088.8559639288187!2d-9.107544471294732!3d39.474981994533636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18b3804e9a0d47%3A0x44bc309b2cead288!2sS.I.%20Auto%20(Solid%20Interest%20Com%C3%A9rcio%20Auto%20Unp%20Lda)!5e0!3m2!1sen!2spt!4v1775747214009!5m2!1sen!2spt"
+                className="h-[360px] w-full rounded-2xl border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            <div>
+              <p className="mb-3 text-center text-sm font-semibold uppercase text-emerald-300">
+                Oficina
+              </p>
+
+              <iframe
+                title="Mapa localização Oficina"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3082.015851584635!2d-9.165617210144838!3d39.42376600267762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18b37f588dfa7d%3A0xa3832b0c0a698465!2sTriumph%20Inc.PT!5e0!3m2!1spt-PT!2spt!4v1778691059397!5m2!1spt-PT!2spt"
+                className="h-[360px] w-full rounded-2xl border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
       </section>

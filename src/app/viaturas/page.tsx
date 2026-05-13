@@ -71,8 +71,11 @@ export default async function ViaturasPage() {
             Viaturas disponíveis
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-            Explore o stock da S.I Auto com apresentação clara, moderna e focada
-            no contacto rápido.
+          Explore o nosso stock de viaturas e contacte-nos para realizar o Test-Drive.
+          <br></br>
+          <br />
+          Além das viaturas expostas, contamos com um leque de parceiros e fornecedores disponiveis a encontrar a sua viatura nova, semi-nova e usada, ideal ao seu gosto e perfil.
+          Temos ao dispor a possibilidade e financiamento até 120 meses, sem entrada inicial.
           </p>
         </div>
       </section>

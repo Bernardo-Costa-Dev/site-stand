@@ -19,13 +19,6 @@ const services = [
   },
 ];
 
-const highlights = [
-  "Pedido de marcação simples e intuitivo",
-  "Imagem moderna e profissional",
-  "Serviços organizados com clareza",
-  "Experiência pensada para gerar confiança",
-];
-
 export default function OficinaPage() {
   return (
     <main className="min-h-screen bg-[#f3f5f4] text-zinc-900">
@@ -40,8 +33,7 @@ export default function OficinaPage() {
               </p>
 
               <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Assistência automóvel, contacto simples e
-                foco na confiança.
+                Assistência automóvel
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
@@ -58,25 +50,14 @@ export default function OficinaPage() {
 
                 <Link
                   href="/contactos"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
                 >
                   Falar connosco
                 </Link>
               </div>
-
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {highlights.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-zinc-200"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+            {/* <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
               <div className="rounded-[24px] border border-white/10 bg-zinc-900/80 p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
                   Atendimento oficina
@@ -103,7 +84,7 @@ export default function OficinaPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -153,7 +134,7 @@ export default function OficinaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
+      {/* <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[28px] border border-zinc-200 bg-white p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
@@ -213,7 +194,7 @@ export default function OficinaPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         id="marcacao"

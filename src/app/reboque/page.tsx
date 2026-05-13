@@ -40,7 +40,7 @@ export default function ReboquePage() {
               </p>
 
               <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Prestação de serviços de reboque 24/7
+                Serviços de Reboque 24/7
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
@@ -50,24 +50,24 @@ export default function ReboquePage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:+351900000000"
+                  href="tel:+351915382782"
                   className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
                 >
                   Ligar agora
                 </a>
 
                 <a
-                  href="https://wa.me/351900000000"
+                  href="https://wa.me/351925511320"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
                 >
                   WhatsApp
                 </a>
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+            <div className="rounded-[28px] border border-white/10 bg-zinc-200/20 p-6 shadow-2xl backdrop-blur">
               <div className="rounded-[24px] border border-white/10 bg-zinc-900/80 p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
                   Assistência rápida
@@ -101,15 +101,15 @@ export default function ReboquePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
-            Serviços disponíveis
+            O nosso reboque disponível ás suas necessidades
           </p>
 
           <h2 className="mt-2 text-3xl font-bold tracking-tight">
-            Serviço de reboque profissional e sempre pronto a ajudar.
+           O seu destino é o nosso serviço
           </h2>
 
           <p className="mt-4 text-base leading-7 text-zinc-600">
-            Uma apresentação simples e clara dos principais serviços prestados.
+            Conte connosco
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function ReboquePage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          {/* <div className="grid gap-6 md:grid-cols-3">
             {highlights.map((item) => (
               <div
                 key={item.title}
@@ -150,7 +150,7 @@ export default function ReboquePage() {
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -171,23 +171,23 @@ export default function ReboquePage() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="tel:+351900000000"
+              href="tel:+351915382782"
               className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
             >
               Ligar agora
             </a>
 
             <a
-              href="https://wa.me/351900000000"
+              href="https://wa.me/351925511320"
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+              className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
             >
               Falar por WhatsApp
             </a>
 
             <Link
-              href="/contactos"
+              href="/contatos"
               className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Ver contactos

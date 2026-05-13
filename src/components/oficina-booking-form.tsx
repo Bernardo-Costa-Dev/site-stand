@@ -23,7 +23,7 @@ const timeSlots = [
   "17:00",
 ];
 
-const OFICINA_WHATSAPP = "351911111111"; // trocar pelo número real
+const OFICINA_WHATSAPP = "351914510993"; // trocar pelo número real
 
 export function OficinaBookingForm() {
   const [service, setService] = useState("revisao");
