@@ -26,21 +26,21 @@ export default function OficinaPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_30%),linear-gradient(to_right,#09090b,#18181b,#09090b)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+          <div className="flex justify-center">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="text-4xl font-bold text-white [-webkit-text-stroke:2px_#328F52]">
                 Oficina
-              </p>
-
-              <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-                Assistência automóvel
               </h1>
 
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:2px_#328F52] md:text-5xl">
+                Assistência automóvel
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
                 Disponha dos nossos serviços de manutenção e apoio pós-venda, com um processo de marcação simples e claro.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <a
                   href="#marcacao"
                   className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
@@ -48,12 +48,12 @@ export default function OficinaPage() {
                   Agendar serviço
                 </a>
 
-                <Link
-                  href="/contactos"
+                <a
+                  href="tel:+3519XXXXXXXX"
                   className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
                 >
                   Falar connosco
-                </Link>
+                </a>
               </div>
             </div>
 

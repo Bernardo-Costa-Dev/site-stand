@@ -13,6 +13,28 @@ type VehicleFiltersBarProps = {
   models?: Option[];
   fuels?: Option[];
   transmissions?: Option[];
+  bounds: {
+    priceMin: number;
+    priceMax: number;
+    yearMin: number;
+    yearMax: number;
+    kmMin: number;
+    kmMax: number;
+  };
+  values: {
+    minPrice: number;
+    maxPrice: number;
+    minYear: number;
+    maxYear: number;
+    minKm: number;
+    maxKm: number;
+    brand: string;
+    model: string;
+    fuel: string;
+    transmission: string;
+    q: string;
+    sort: string;
+  };
 };
 
 function formatNumber(value: number) {
@@ -102,30 +124,32 @@ export function VehicleFiltersBar({
   models = [],
   fuels = [],
   transmissions = [],
+  bounds,
+  values
 }: VehicleFiltersBarProps) {
-  const [priceMin, setPriceMin] = useState(4500);
-  const [priceMax, setPriceMax] = useState(48000);
+  const [priceMin, setPriceMin] = useState(values.minPrice);
+  const [priceMax, setPriceMax] = useState(values.maxPrice);
 
-  const [yearMin, setYearMin] = useState(2008);
-  const [yearMax, setYearMax] = useState(2024);
+  const [yearMin, setYearMin] = useState(values.minYear);
+  const [yearMax, setYearMax] = useState(values.maxYear);
 
-  const [kmMin, setKmMin] = useState(0);
-  const [kmMax, setKmMax] = useState(565500);
+  const [kmMin, setKmMin] = useState(values.minKm);
+  const [kmMax, setKmMax] = useState(values.maxKm);
 
-  const [brand, setBrand] = useState("");
-  const [model, setModel] = useState("");
-  const [fuel, setFuel] = useState("");
-  const [transmission, setTransmission] = useState("");
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState("");
+  const [brand, setBrand] = useState(values.brand);
+  const [model, setModel] = useState(values.model);
+  const [fuel, setFuel] = useState(values.fuel);
+  const [transmission, setTransmission] = useState(values.transmission);
+  const [search, setSearch] = useState(values.q);
+  const [sort, setSort] = useState(values.sort);
 
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl backdrop-blur md:p-6">
       <div className="grid gap-6 xl:grid-cols-[1fr_1fr_1fr_220px_160px]">
         <DualRange
           label="Preço"
-          min={4500}
-          max={48000}
+          min={bounds.priceMin}
+          max={bounds.priceMax}
           step={500}
           valueMin={priceMin}
           valueMax={priceMax}
@@ -135,8 +159,8 @@ export function VehicleFiltersBar({
 
         <DualRange
           label="Ano"
-          min={2008}
-          max={2024}
+         min={bounds.yearMin}
+          max={bounds.yearMax}
           step={1}
           valueMin={yearMin}
           valueMax={yearMax}
@@ -146,8 +170,8 @@ export function VehicleFiltersBar({
 
         <DualRange
           label="Kms"
-          min={0}
-          max={565500}
+          min={bounds.priceMin}
+          max={bounds.priceMax}
           step={1000}
           valueMin={kmMin}
           valueMax={kmMax}
@@ -162,9 +186,9 @@ export function VehicleFiltersBar({
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="h-12 w-full rounded-full border border-white/15 bg-white px-4 text-sm text-zinc-900 outline-none"
+            className="h-12 w-full rounded-full border border-white/15 bg-white px-4 text-center text-sm text-zinc-900 outline-none"
           >
-            <option value="">-- ORDER --</option>
+            <option value="">--- Ordenar Por ---</option>
             <option value="price-asc">Preço ascendente</option>
             <option value="price-desc">Preço descendente</option>
             <option value="year-desc">Ano mais recente</option>

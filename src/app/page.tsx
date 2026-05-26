@@ -65,10 +65,7 @@ export default async function Home() {
               O seu stand automóvel
             </p>
 
-            <h2 className="text-5xl font-extrabold uppercase tracking-wide text-white [webkit-text-stroke:2px_#328F52]">
-              Reboque
-            </h2>
-            <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl text-center">
+            <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:1px_#04802f] md:text-5xl lg:text-6xl text-center">
               Stock Multimarcas para qualquer ocasião
             </h1>
 

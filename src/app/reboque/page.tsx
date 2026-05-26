@@ -35,11 +35,11 @@ export default function ReboquePage() {
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400 ">
                 Reboque
               </p>
 
-              <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
+              <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:2px_#04802f] md:text-5xl">
                 Serviços de Reboque 24/7
               </h1>
 

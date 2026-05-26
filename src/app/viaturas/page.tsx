@@ -46,12 +46,52 @@ function buildOptions(values: Array<string | undefined>) {
     .sort((a, b) => a!.localeCompare(b!, "pt"))
     .map((value) => ({
       label: value as string,
-      value: (value as string).toLowerCase().replace(/\s+/g, "-"),
+      value: value as string,
     }));
 }
 
-export default async function ViaturasPage() {
+type PageProps = {
+  searchParams?: Promise<{
+    minPrice?: string;
+    maxPrice?: string;
+    minYear?: string;
+    maxYear?: string;
+    minKm?: string;
+    maxKm?: string;
+    brand?: string;
+    model?: string;
+    fuel?: string;
+    transmission?: string;
+    q?: string;
+    sort?: string;
+  }>;
+};
+
+export default async function ViaturasPage({ searchParams }: PageProps) {
   const vehicles = await client.fetch<Vehicle[]>(vehiclesQuery);
+
+  const params = (await searchParams) ?? {};
+
+  const prices = vehicles
+    .map((vehicle) => vehicle.price)
+    .filter((value): value is number => typeof value === "number");
+
+  const years = vehicles
+    .map((vehicle) => vehicle.year)
+    .filter((value): value is number => typeof value === "number");
+
+  const mileages = vehicles
+    .map((vehicle) => vehicle.mileage)
+    .filter((value): value is number => typeof value === "number");
+
+  const bounds = {
+    priceMin: prices.length ? Math.min(...prices) : 0,
+    priceMax: prices.length ? Math.max(...prices) : 0,
+    yearMin: years.length ? Math.min(...years) : 0,
+    yearMax: years.length ? Math.max(...years) : 0,
+    kmMin: mileages.length ? Math.min(...mileages) : 0,
+    kmMax: mileages.length ? Math.max(...mileages) : 0,
+  };
 
   const brandOptions = buildOptions(vehicles.map((vehicle) => vehicle.brand));
   const modelOptions = buildOptions(vehicles.map((vehicle) => vehicle.model));
@@ -59,6 +99,82 @@ export default async function ViaturasPage() {
   const transmissionOptions = buildOptions(
     vehicles.map((vehicle) => vehicle.transmission)
   );
+
+  const filters = {
+    minPrice: Number(params.minPrice ?? bounds.priceMin),
+    maxPrice: Number(params.maxPrice ?? bounds.priceMax),
+    minYear: Number(params.minYear ?? bounds.yearMin),
+    maxYear: Number(params.maxYear ?? bounds.yearMax),
+    minKm: Number(params.minKm ?? bounds.kmMin),
+    maxKm: Number(params.maxKm ?? bounds.kmMax),
+    brand: params.brand ?? "",
+    model: params.model ?? "",
+    fuel: params.fuel ?? "",
+    transmission: params.transmission ?? "",
+    q: params.q ?? "",
+    sort: params.sort ?? "",
+  };
+
+  let filteredVehicles = vehicles.filter((vehicle) => {
+    const price = vehicle.price ?? 0;
+    const year = vehicle.year ?? 0;
+    const km = vehicle.mileage ?? 0;
+
+    const matchesPrice =
+      price >= filters.minPrice && price <= filters.maxPrice;
+
+    const matchesYear =
+      year >= filters.minYear && year <= filters.maxYear;
+
+    const matchesKm =
+      km >= filters.minKm && km <= filters.maxKm;
+
+    const matchesBrand =
+      !filters.brand || vehicle.brand === filters.brand;
+
+    const matchesModel =
+      !filters.model || vehicle.model === filters.model;
+
+    const matchesFuel =
+      !filters.fuel || vehicle.fuel === filters.fuel;
+
+    const matchesTransmission =
+      !filters.transmission || vehicle.transmission === filters.transmission;
+
+    const searchText = [
+      vehicle.title,
+      vehicle.brand,
+      vehicle.model,
+      vehicle.description,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+
+    const matchesQuery =
+      !filters.q || searchText.includes(filters.q.toLowerCase());
+
+    return (
+      matchesPrice &&
+      matchesYear &&
+      matchesKm &&
+      matchesBrand &&
+      matchesModel &&
+      matchesFuel &&
+      matchesTransmission &&
+      matchesQuery
+    );
+  });
+
+  if (filters.sort === "price-asc") {
+    filteredVehicles.sort((a, b) => a.price - b.price);
+  } else if (filters.sort === "price-desc") {
+    filteredVehicles.sort((a, b) => b.price - a.price);
+  } else if (filters.sort === "year-desc") {
+    filteredVehicles.sort((a, b) => b.year - a.year);
+  } else if (filters.sort === "km-asc") {
+    filteredVehicles.sort((a, b) => (a.mileage ?? 0) - (b.mileage ?? 0));
+  }
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
@@ -83,21 +199,23 @@ export default async function ViaturasPage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="mb-8">
           <VehicleFiltersBar
-            total={vehicles.length}
+            total={filteredVehicles.length}
             brands={brandOptions}
             models={modelOptions}
             fuels={fuelOptions}
             transmissions={transmissionOptions}
+            bounds={bounds}
+            values={filters}
           />
         </div>
 
-        {vehicles.length === 0 ? (
+        {filteredVehicles.length === 0 ? (
           <div className="rounded-3xl border border-dashed border-zinc-300 bg-zinc-50 p-10 text-center text-zinc-500">
             Ainda não existem viaturas publicadas.
           </div>
         ) : (
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
-            {vehicles.map((vehicle) => {
+            {filteredVehicles.map((vehicle) => {
               const image = vehicle.images?.[0];
 
               return (
