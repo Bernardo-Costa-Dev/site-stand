@@ -12,7 +12,7 @@ export function SiteFooter() {
             height={120}
             className="h-16 w-auto"
           />
-          <p className="mt-1 text-sm text-zinc-400">Solid Interest Auto</p>
+          <p className="mt-1 text-sm text-zinc-400">Solid Interest Comércio Auto <br /> UNIPESSOAL LDA</p>
         </div>
 
         <div>
@@ -41,7 +41,7 @@ export function SiteFooter() {
 
       <div className="border-t border-zinc-800">
         <div className="mx-auto max-w-7xl px-4 py-5 text-sm text-zinc-500 sm:px-6">
-          © 2026 S.I Auto - Solid Interest. Todos os direitos reservados.
+          © 2026 S.I Auto - Solid Interest. Desenvolvido por Bern@sByte. Todos os direitos reservados.
         </div>
       </div>
     </footer>

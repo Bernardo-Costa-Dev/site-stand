@@ -15,16 +15,21 @@ type Vehicle = {
   year: number;
   mileage?: number;
   fuel?: string;
+  horsepower?: number;
+  power?: number;
   transmission?: string;
+  transmission_speeds?: string;
   brand?: string;
   model?: string;
+  number_doors?: number;
+  number_seats?: number;
   featured?: boolean;
-  images?: SanityImageSource[];
+  images?: unknown[];
   description?: string;
 };
 
 const vehiclesQuery = `
-  *[_type == "vehicle"] | order(featured desc, _createdAt desc) {
+  *[_type == "vehicle" && featured == true] | order(_createdAt desc) {
     _id,
     title,
     slug,
@@ -32,9 +37,14 @@ const vehiclesQuery = `
     year,
     mileage,
     fuel,
+    horsepower,
+    power,
     transmission,
+    transmission_speeds,
     brand,
     model,
+    number_doors,
+    number_seats,
     featured,
     images,
     description

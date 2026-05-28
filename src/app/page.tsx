@@ -13,9 +13,14 @@ type Vehicle = {
   year: number;
   mileage?: number;
   fuel?: string;
+  horsepower?: number;
+  power?: number;
   transmission?: string;
+  transmission_speeds?: string;
   brand?: string;
   model?: string;
+  number_doors?: number;
+  number_seats?: number;
   featured?: boolean;
   images?: unknown[];
   description?: string;
@@ -30,9 +35,14 @@ const vehiclesQuery = `
     year,
     mileage,
     fuel,
+    horsepower,
+    power,
     transmission,
+    transmission_speeds,
     brand,
     model,
+    number_doors,
+    number_seats,
     featured,
     images,
     description
@@ -306,7 +316,7 @@ export default async function Home() {
               A SOLID INTEREST – COMÉRCIO AUTO UNIPESSOAL foi formalizada em maio de 2023, consolidando a experiência e visão empresarial de Vasco Santos, Sócio - Gerente da empresa.
             </p>
             <p className="mt-4 leading-8 text-zinc-600">
-              Com um percurso desenvolvido no setor automóvel enquanto empresário em nome individual, Vasco Santos estruturou metodologias de trabalho orientadas para a qualidade, confiança e eficiência, tanto na área da reparação automóvel como no comércio de viaturas.
+              Com um percurso desenvolvido no setor automóvel enquanto empresário, Vasco Santos estruturou metodologias de trabalho orientadas para a qualidade, confiança e eficiência, tanto na área da reparação automóvel como no comércio de viaturas.
             </p>
             <p className="mt-4 leading-8 text-zinc-600">
              A empresa reforça ainda a sua oferta com um Serviço de Reboque Rápido a nível nacional, disponível para apoiar particulares, empresas e clientes que necessitem de assistência rápida, segura e profissional.        
@@ -327,40 +337,24 @@ export default async function Home() {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-center text-lg font-semibold">
-                  Comprometemo-nos
-                </h3>
+            <div className="rounded-3xl border border-zinc-200 bg-white p-6">
+              <h3 className="text-center text-lg font-semibold">
+                O Nosso Compromisso é a Sua Confiança
+              </h3>
 
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Facilidade de financiamento até 120x
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Viaturas entregues com revisão e IPO
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Garantia de 18 meses
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Viaturas para comércio
-                </p>
-              </div>
+              <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div className="space-y-3 text-sm leading-6 text-zinc-600">
+                  <p>✅ Facilidade de financiamento até 120x</p>
+                  <p>✅ Viaturas entregues com revisão e IPO</p>
+                  <p>✅ Garantia de 18 meses</p>
+                  <p>✅ Viaturas para comércio</p>
+                </div>
 
-              <div className="rounded-3xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-center text-lg font-semibold">
-                  Consigo
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Transferência de propriedade
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Aceitamos retoma do antigo carro
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">
-                  ✅ Assistência pós-venda
-                </p>
+                <div className="space-y-3 text-sm leading-6 text-zinc-600">
+                  <p>✅ Transferência de propriedade</p>
+                  <p>✅ Aceitamos retomas</p>
+                  <p>✅ Assistência pós-venda</p>
+                </div>
               </div>
             </div>
           </div>
@@ -376,7 +370,7 @@ export default async function Home() {
             O Nosso Serviço Vai Além Da Sua Compra
           </h2>
           <p className="mt-4 text-zinc-600">
-           Um acompanhamento técnico que complementa a experiência do stand e por isso disponibilizamos aos nosso clientes um vasto serviço de assitência mecânica automóvel.
+           Um acompanhamento técnico que complementa a experiência do stand e por isso disponibilizamos aos nosso clientes um vasto serviço de assistência mecânica automóvel.
           </p>
         </div>
 

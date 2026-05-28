@@ -10,6 +10,9 @@ import {
   BadgeEuro,
   Phone,
   MessageCircle,
+  Zap,
+  DoorOpen,
+  Users,
   Star,
 } from "lucide-react";
 import { client } from "@/lib/sanity/client";
@@ -28,9 +31,14 @@ type Vehicle = {
   year: number;
   mileage?: number;
   fuel?: string;
+  horsepower?: number;
+  power?: number;
   transmission?: string;
+  transmission_speeds?: string;
   brand?: string;
   model?: string;
+  number_doors?: number;
+  number_seats?: number;
   featured?: boolean;
   images?: SanityImageSource[];
   description?: string;
@@ -45,9 +53,14 @@ const vehicleQuery = `
     year,
     mileage,
     fuel,
+    horsepower,
+    power,
     transmission,
+    transmission_speeds,
     brand,
     model,
+    number_doors,
+    number_seats,
     featured,
     images,
     description
@@ -197,6 +210,52 @@ export default async function VehiclePage({ params }: Props) {
                   icon={<Cog className="h-5 w-5" />}
                   label="Caixa"
                   value={vehicle.transmission || "—"}
+                />
+
+                <SpecCard
+                  icon={<Cog className="h-5 w-5" />}
+                  label="Velocidades da caixa"
+                  value={vehicle.transmission_speeds || "—"}
+                />
+
+                <SpecCard
+                  icon={<Zap className="h-5 w-5" />}
+                  label="Cavalos"
+                  value={
+                    vehicle.horsepower !== undefined
+                      ? `${vehicle.horsepower} cv`
+                      : "—"
+                  }
+                />
+
+                <SpecCard
+                  icon={<Zap className="h-5 w-5" />}
+                  label="Potência"
+                  value={
+                    vehicle.power !== undefined
+                      ? `${vehicle.power} kW`
+                      : "—"
+                  }
+                />
+
+                <SpecCard
+                  icon={<DoorOpen className="h-5 w-5" />}
+                  label="N.º de portas"
+                  value={
+                    vehicle.number_doors !== undefined
+                      ? String(vehicle.number_doors)
+                      : "—"
+                  }
+                />
+
+                <SpecCard
+                  icon={<Users className="h-5 w-5" />}
+                  label="Lugares"
+                  value={
+                    vehicle.number_seats !== undefined
+                      ? String(vehicle.number_seats)
+                      : "—"
+                  }
                 />
 
                 <SpecCard

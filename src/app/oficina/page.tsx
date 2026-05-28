@@ -98,11 +98,6 @@ export default function OficinaPage() {
           <h2 className="mt-2 text-3xl font-bold tracking-tight">
             Uma oficina preparada para acompanhar o cliente para além da compra.
           </h2>
-
-          <p className="mt-4 text-base leading-7 text-zinc-600">
-            Serviços apresentados com clareza para transmitir profissionalismo,
-            organização e confiança.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
