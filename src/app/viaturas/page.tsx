@@ -29,7 +29,7 @@ type Vehicle = {
 };
 
 const vehiclesQuery = `
-  *[_type == "vehicle" && featured == true] | order(_createdAt desc) {
+  *[_type == "vehicle"] | order(featured desc, _createdAt desc) {
     _id,
     title,
     slug,
