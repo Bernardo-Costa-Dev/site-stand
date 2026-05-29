@@ -234,6 +234,10 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
                   className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="relative aspect-[4/3] w-full bg-zinc-100">
+                    <Link
+                        href={vehicle.slug?.current ? `/viaturas/${vehicle.slug.current}` : "#"}
+                        className="inline-flex rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-zinc-800"
+                    >
                     {image ? (
                       <Image
                         src={urlFor(image).width(1000).height(750).url()}
@@ -252,6 +256,7 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
                         Destaque
                       </div>
                     )}
+                    </Link>
                   </div>
 
                   <div className="p-5">

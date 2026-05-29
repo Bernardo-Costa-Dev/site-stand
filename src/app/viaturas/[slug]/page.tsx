@@ -18,6 +18,7 @@ import {
 import { client } from "@/lib/sanity/client";
 import { urlFor } from "@/lib/sanity/image";
 import { VehicleGallery } from "@/components/vehicle-gallery";
+import { ChessKnight } from "lucide-react";
 
 
 
@@ -219,23 +220,15 @@ export default async function VehiclePage({ params }: Props) {
                 />
 
                 <SpecCard
-                  icon={<Zap className="h-5 w-5" />}
-                  label="Cavalos"
-                  value={
-                    vehicle.horsepower !== undefined
-                      ? `${vehicle.horsepower} cv`
-                      : "—"
-                  }
+                  icon={<ChessKnight className="h-5 w-5" />}
+                  label="Cv"
+                  value={vehicle.horsepower !== undefined ? `${vehicle.horsepower} cv` : "—"}
                 />
 
                 <SpecCard
                   icon={<Zap className="h-5 w-5" />}
                   label="Potência"
-                  value={
-                    vehicle.power !== undefined
-                      ? `${vehicle.power} kW`
-                      : "—"
-                  }
+                  value={vehicle.power !== undefined ? `${vehicle.power} kW` : "—"}
                 />
 
                 <SpecCard
