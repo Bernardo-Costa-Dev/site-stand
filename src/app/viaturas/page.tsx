@@ -286,9 +286,9 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
                       </p>
                     </div>
 
-                    <p className="mb-5 min-h-[72px] text-sm leading-6 text-zinc-600">
+                    {/* <p className="mb-5 min-h-[72px] text-sm leading-6 text-zinc-600">
                       {vehicle.description || "Sem descrição disponível."}
-                    </p>
+                    </p> */}
 
                     <Link
                       href={vehicle.slug?.current ? `/viaturas/${vehicle.slug.current}` : "#"}
