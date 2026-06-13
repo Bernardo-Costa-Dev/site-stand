@@ -108,6 +108,10 @@ export default async function VehiclePage({ params }: Props) {
       urlFor(image).width(1600).height(1200).quality(90).auto("format").url()
     ) ?? [];
 
+    const vehicleUrl = vehicle.slug?.current
+  ? `https://teudominio.pt/viaturas/${vehicle.slug.current}`
+  : "Link indisponível";
+
   return (
     <main className="min-h-screen bg-[#f3f5f4] text-zinc-900">
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
@@ -158,7 +162,7 @@ export default async function VehiclePage({ params }: Props) {
             <div className="rounded-[28px] border border-emerald-200 bg-white px-6 py-5 shadow-sm">
               <p className="text-sm text-zinc-500">Preço</p>
               <p className="mt-1 text-3xl font-bold text-emerald-700">
-                {vehicle.price?.toLocaleString("pt-PT")} €
+                Sob Consulta
               </p>
             </div>
           </div>
@@ -228,7 +232,7 @@ export default async function VehiclePage({ params }: Props) {
                 <SpecCard
                   icon={<Zap className="h-5 w-5" />}
                   label="Potência"
-                  value={vehicle.power !== undefined ? `${vehicle.power} kW` : "—"}
+                  value={vehicle.power !== undefined ? `${vehicle.power} CC` : "—"}
                 />
 
                 <SpecCard
@@ -260,8 +264,29 @@ export default async function VehiclePage({ params }: Props) {
                 <SpecCard
                   icon={<BadgeEuro className="h-5 w-5" />}
                   label="Preço"
-                  value={`${vehicle.price?.toLocaleString("pt-PT")} €`}
+                  value="Sob Consulta"
                 />
+
+                <a
+                  href={`https://wa.me/351925511320?text=${encodeURIComponent(
+                    `Olá, gostaria de saber o preço desta viatura: ${vehicle.title}. Link do anúncio: ${vehicleUrl}`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block rounded-[28px] bg-emerald-900 p-6 text-white shadow-sm transition hover:bg-emerald-600"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 rounded-full bg-white/10 p-2">
+                      <MessageCircle className="h-5 w-5 text-emerald-400" />
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold leading-tight">
+                        Contactar para mais informações
+                      </h3>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
 

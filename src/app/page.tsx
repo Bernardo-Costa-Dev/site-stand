@@ -144,9 +144,9 @@ export default async function Home() {
                       <h2 className="mt-2 text-2xl font-bold">{heroVehicle.title}</h2>
                     </div>
 
-                    <p className="whitespace-nowrap text-2xl font-bold text-emerald-700">
-                      {heroVehicle.price?.toLocaleString("pt-PT")} €
-                    </p>
+                    {/* <p className="whitespace-nowrap text-2xl font-bold text-emerald-700">
+                      Sob Consulta
+                    </p> */}
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-sm">
@@ -263,9 +263,9 @@ export default async function Home() {
                       <h3 className="text-xl font-semibold leading-tight">
                         {vehicle.title}
                       </h3>
-                      <p className="whitespace-nowrap text-lg font-bold text-emerald-700">
-                        {vehicle.price?.toLocaleString("pt-PT")} €
-                      </p>
+                      {/* <p className="whitespace-nowrap text-lg font-bold text-emerald-700">
+                        Sob Consulta
+                      </p> */}
                     </div>
 
                     <div className="mb-4 grid grid-cols-2 gap-2 text-sm text-zinc-600">

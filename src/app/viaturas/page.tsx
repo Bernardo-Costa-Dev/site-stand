@@ -62,8 +62,6 @@ function buildOptions(values: Array<string | undefined>) {
 
 type PageProps = {
   searchParams?: Promise<{
-    minPrice?: string;
-    maxPrice?: string;
     minYear?: string;
     maxYear?: string;
     minKm?: string;
@@ -82,10 +80,6 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
 
   const params = (await searchParams) ?? {};
 
-  const prices = vehicles
-    .map((vehicle) => vehicle.price)
-    .filter((value): value is number => typeof value === "number");
-
   const years = vehicles
     .map((vehicle) => vehicle.year)
     .filter((value): value is number => typeof value === "number");
@@ -95,8 +89,6 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
     .filter((value): value is number => typeof value === "number");
 
   const bounds = {
-    priceMin: prices.length ? Math.min(...prices) : 0,
-    priceMax: prices.length ? Math.max(...prices) : 0,
     yearMin: years.length ? Math.min(...years) : 0,
     yearMax: years.length ? Math.max(...years) : 0,
     kmMin: mileages.length ? Math.min(...mileages) : 0,
@@ -111,8 +103,6 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
   );
 
   const filters = {
-    minPrice: Number(params.minPrice ?? bounds.priceMin),
-    maxPrice: Number(params.maxPrice ?? bounds.priceMax),
     minYear: Number(params.minYear ?? bounds.yearMin),
     maxYear: Number(params.maxYear ?? bounds.yearMax),
     minKm: Number(params.minKm ?? bounds.kmMin),
@@ -126,12 +116,8 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
   };
 
   let filteredVehicles = vehicles.filter((vehicle) => {
-    const price = vehicle.price ?? 0;
     const year = vehicle.year ?? 0;
     const km = vehicle.mileage ?? 0;
-
-    const matchesPrice =
-      price >= filters.minPrice && price <= filters.maxPrice;
 
     const matchesYear =
       year >= filters.minYear && year <= filters.maxYear;
@@ -165,7 +151,6 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
       !filters.q || searchText.includes(filters.q.toLowerCase());
 
     return (
-      matchesPrice &&
       matchesYear &&
       matchesKm &&
       matchesBrand &&
@@ -176,14 +161,14 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
     );
   });
 
-  if (filters.sort === "price-asc") {
-    filteredVehicles.sort((a, b) => a.price - b.price);
-  } else if (filters.sort === "price-desc") {
-    filteredVehicles.sort((a, b) => b.price - a.price);
-  } else if (filters.sort === "year-desc") {
+  if (filters.sort === "year-desc") {
     filteredVehicles.sort((a, b) => b.year - a.year);
+  } else if (filters.sort === "year-asc") {
+    filteredVehicles.sort((a, b) => a.year - b.year);
   } else if (filters.sort === "km-asc") {
     filteredVehicles.sort((a, b) => (a.mileage ?? 0) - (b.mileage ?? 0));
+  } else if (filters.sort === "km-desc") {
+    filteredVehicles.sort((a, b) => (b.mileage ?? 0) - (a.mileage ?? 0));
   }
 
   return (
@@ -264,9 +249,9 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
                       <h2 className="text-xl font-semibold leading-tight">
                         {vehicle.title}
                       </h2>
-                      <p className="whitespace-nowrap text-lg font-bold text-emerald-700">
-                        {vehicle.price?.toLocaleString("pt-PT")} €
-                      </p>
+                      {/* <p className="whitespace-nowrap text-lg font-bold text-emerald-700">
+                        Sob Consulta
+                      </p> */}
                     </div>
 
                     <div className="mb-4 grid grid-cols-2 gap-2 text-sm text-zinc-600">

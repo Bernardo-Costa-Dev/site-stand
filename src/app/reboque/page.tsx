@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   "Prestação de serviços de reboque 24/7",
@@ -30,40 +31,55 @@ export default function ReboquePage() {
   return (
     <main className="min-h-screen bg-[#f3f5f4] text-zinc-900">
       <section className="relative overflow-hidden bg-zinc-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_30%),linear-gradient(to_right,#09090b,#18181b,#09090b)]" />
 
+         <div className="absolute inset-0">
+              <Image
+                src="/hero-reboque.jpeg"
+                alt="Oficina S.I Auto"
+                fill
+                className="object-cover object-center md:object-center"
+                priority
+                sizes="100vw"
+              />
+          </div>
+
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_30%),linear-gradient(to_right,#09090b,#18181b,#09090b)]" /> */}
+
+    
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400 ">
-                Reboque
-              </p>
+            <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-black/45 px-6 py-8 text-center shadow-2xl backdrop-blur-sm sm:px-8 sm:py-10">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400 ">
+                  Reboque
+                </p>
 
-              <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:2px_#04802f] md:text-5xl">
-                Serviços de Reboque 24/7
-              </h1>
+                <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:2px_#04802f] md:text-5xl">
+                  Serviços de Reboque 24/7
+                </h1>
 
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
-                Assistência de reboque para particulares, empresas e eventos
-                motorizados especializados, com cobertura nacional.
-              </p>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
+                  Assistência de reboque para particulares, empresas e eventos
+                  motorizados especializados, com cobertura nacional.
+                </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="tel:+351915382782"
-                  className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
-                >
-                  Ligar agora
-                </a>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="tel:+351915382782"
+                    className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
+                  >
+                    Ligar agora
+                  </a>
 
-                <a
-                  href="https://wa.me/351925511320"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
-                >
-                  WhatsApp
-                </a>
+                  <a
+                    href="https://wa.me/351925511320"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
 

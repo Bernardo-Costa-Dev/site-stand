@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 type Option = {
   label: string;
@@ -14,16 +15,12 @@ type VehicleFiltersBarProps = {
   fuels?: Option[];
   transmissions?: Option[];
   bounds: {
-    priceMin: number;
-    priceMax: number;
     yearMin: number;
     yearMax: number;
     kmMin: number;
     kmMax: number;
   };
   values: {
-    minPrice: number;
-    maxPrice: number;
     minYear: number;
     maxYear: number;
     minKm: number;
@@ -125,10 +122,10 @@ export function VehicleFiltersBar({
   fuels = [],
   transmissions = [],
   bounds,
-  values
+  values,
 }: VehicleFiltersBarProps) {
-  const [priceMin, setPriceMin] = useState(values.minPrice);
-  const [priceMax, setPriceMax] = useState(values.maxPrice);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const [yearMin, setYearMin] = useState(values.minYear);
   const [yearMax, setYearMax] = useState(values.maxYear);
@@ -143,23 +140,45 @@ export function VehicleFiltersBar({
   const [search, setSearch] = useState(values.q);
   const [sort, setSort] = useState(values.sort);
 
+  function applyFilters() {
+    const params = new URLSearchParams();
+
+    if (yearMin !== bounds.yearMin) params.set("minYear", String(yearMin));
+    if (yearMax !== bounds.yearMax) params.set("maxYear", String(yearMax));
+    if (kmMin !== bounds.kmMin) params.set("minKm", String(kmMin));
+    if (kmMax !== bounds.kmMax) params.set("maxKm", String(kmMax));
+
+    if (brand) params.set("brand", brand);
+    if (model) params.set("model", model);
+    if (fuel) params.set("fuel", fuel);
+    if (transmission) params.set("transmission", transmission);
+    if (search.trim()) params.set("q", search.trim());
+    if (sort) params.set("sort", sort);
+
+    router.push(`${pathname}?${params.toString()}`);
+  }
+
+  function clearFilters() {
+    setYearMin(bounds.yearMin);
+    setYearMax(bounds.yearMax);
+    setKmMin(bounds.kmMin);
+    setKmMax(bounds.kmMax);
+    setBrand("");
+    setModel("");
+    setFuel("");
+    setTransmission("");
+    setSearch("");
+    setSort("");
+
+    router.push(pathname);
+  }
+
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl backdrop-blur md:p-6">
-      <div className="grid gap-6 xl:grid-cols-[1fr_1fr_1fr_220px_160px]">
-        <DualRange
-          label="Preço"
-          min={bounds.priceMin}
-          max={bounds.priceMax}
-          step={500}
-          valueMin={priceMin}
-          valueMax={priceMax}
-          onChangeMin={setPriceMin}
-          onChangeMax={setPriceMax}
-        />
-
+      <div className="grid gap-6 xl:grid-cols-[1fr_1fr_220px_160px]">
         <DualRange
           label="Ano"
-         min={bounds.yearMin}
+          min={bounds.yearMin}
           max={bounds.yearMax}
           step={1}
           valueMin={yearMin}
@@ -170,8 +189,8 @@ export function VehicleFiltersBar({
 
         <DualRange
           label="Kms"
-          min={bounds.priceMin}
-          max={bounds.priceMax}
+          min={bounds.kmMin}
+          max={bounds.kmMax}
           step={1000}
           valueMin={kmMin}
           valueMax={kmMax}
@@ -189,20 +208,17 @@ export function VehicleFiltersBar({
             className="h-12 w-full rounded-full border border-white/15 bg-white px-4 text-center text-sm text-zinc-900 outline-none"
           >
             <option value="">--- Ordenar Por ---</option>
-            <option value="price-asc">Preço ascendente</option>
-            <option value="price-desc">Preço descendente</option>
             <option value="year-desc">Ano mais recente</option>
+            <option value="year-asc">Ano mais antigo</option>
             <option value="km-asc">Menos kms</option>
+            <option value="km-desc">Mais kms</option>
           </select>
         </div>
 
         <div className="flex items-end">
-          <button
-            type="button"
-            className="h-12 w-full rounded-full bg-black px-5 text-sm font-semibold text-white"
-          >
+          <div className="flex h-12 w-full items-center justify-center rounded-full bg-black px-5 text-sm font-semibold text-white">
             {total} Viaturas
-          </button>
+          </div>
         </div>
       </div>
 
@@ -213,7 +229,10 @@ export function VehicleFiltersBar({
           </label>
           <select
             value={brand}
-            onChange={(e) => setBrand(e.target.value)}
+            onChange={(e) => {
+              setBrand(e.target.value);
+              setModel("");
+            }}
             className="h-11 w-full rounded-xl border border-white/15 bg-white px-4 text-sm text-zinc-900 outline-none"
           >
             <option value="">Marca</option>
@@ -290,6 +309,24 @@ export function VehicleFiltersBar({
             className="h-11 w-full rounded-full border border-white/15 bg-white px-4 text-sm text-zinc-900 outline-none"
           />
         </div>
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        <button
+          type="button"
+          onClick={applyFilters}
+          className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+        >
+          Aplicar filtros
+        </button>
+
+        <button
+          type="button"
+          onClick={clearFilters}
+          className="rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
+        >
+          Limpar
+        </button>
       </div>
     </section>
   );
