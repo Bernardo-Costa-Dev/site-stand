@@ -176,7 +176,7 @@ export default async function VehiclePage({ params }: Props) {
               <h2 className="text-2xl font-bold tracking-tight">
                 Descrição da viatura
               </h2>
-              <p className="mt-4 leading-8 text-zinc-600">
+              <p className="mt-4 whitespace-pre-line leading-8 text-zinc-600">
                 {vehicle.description || "Sem descrição disponível."}
               </p>
             </div>
