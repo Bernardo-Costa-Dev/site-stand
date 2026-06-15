@@ -186,7 +186,9 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
           <br></br>
           <br />
           Além das viaturas expostas, contamos com um leque de parceiros e fornecedores disponiveis a encontrar a sua viatura nova, semi-nova e ou usada, ideal ao seu gosto e perfil.
-          Temos ao dispor a possibilidade e financiamento até 120 meses, sem entrada inicial.
+          <br/>
+          Temos condições especiais de pagamento até 120x
+
           </p>
         </div>
       </section>
