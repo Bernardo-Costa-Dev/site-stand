@@ -48,7 +48,7 @@ export default function ContactosPage() {
                   <span className="font-semibold">Redes Sociais:</span>
 
                   <a
-                    href="https://www.facebook.com/URL-DA-PAGINA"
+                    href="https://www.facebook.com/share/15tSTAWRDCo/"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-zinc-700 transition hover:text-emerald-700"
@@ -59,7 +59,7 @@ export default function ContactosPage() {
                   </a>
 
                   <a
-                    href="https://www.instagram.com/URL-DA-PAGINA"
+                    href="https://www.instagram.com/si_auto_stand?igsh=d3N1YzBic2JwaGxq"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-zinc-700 transition hover:text-emerald-700"

@@ -44,7 +44,7 @@ export function SiteFooter() {
 
             <div className="mt-3 flex flex-wrap items-center gap-4">
               <a
-                href="https://www.facebook.com/URL-DA-PAGINA"
+                href="https://www.facebook.com/share/15tSTAWRDCo/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-zinc-300 transition hover:text-emerald-400"
@@ -55,7 +55,7 @@ export function SiteFooter() {
               </a>
 
               <a
-                href="https://www.instagram.com/URL-DA-PAGINA"
+                href="https://www.instagram.com/si_auto_stand?igsh=d3N1YzBic2JwaGxq"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-zinc-300 transition hover:text-emerald-400"
