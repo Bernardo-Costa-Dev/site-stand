@@ -64,7 +64,7 @@ export default function OficinaPage() {
               </a>
 
               <a
-                href="tel:+3519XXXXXXXX"
+                href="tel:+351915382782"
                 className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
               >
                 Falar connosco
