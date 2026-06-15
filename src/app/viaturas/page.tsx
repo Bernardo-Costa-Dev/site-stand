@@ -185,7 +185,7 @@ export default async function ViaturasPage({ searchParams }: PageProps) {
           Explore o nosso stock de viaturas e contacte-nos para realizar o Test-Drive.
           <br></br>
           <br />
-          Além das viaturas expostas, contamos com um leque de parceiros e fornecedores disponiveis a encontrar a sua viatura nova, semi-nova e usada, ideal ao seu gosto e perfil.
+          Além das viaturas expostas, contamos com um leque de parceiros e fornecedores disponiveis a encontrar a sua viatura nova, semi-nova e ou usada, ideal ao seu gosto e perfil.
           Temos ao dispor a possibilidade e financiamento até 120 meses, sem entrada inicial.
           </p>
         </div>
