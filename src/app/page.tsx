@@ -438,7 +438,10 @@ export default async function Home() {
               <p>
                 <span className="font-semibold">Email:</span> autosolidinterest@gmail.com
               </p>
-                <a
+              <p className="flex flex-wrap items-center gap-3">
+                  <span className="font-semibold">Redes Sociais:</span>
+
+                  <a
                     href="https://www.facebook.com/URL-DA-PAGINA"
                     target="_blank"
                     rel="noreferrer"
@@ -459,6 +462,7 @@ export default async function Home() {
                     <InstagramIcon />
                     <span>Instagram</span>
                   </a>
+              </p>
               <p>
                 <span className="font-semibold">Morada:</span> Estrada Nacional N° 8, Q.ta do Mota, 2460-194 Alfeizerão
               </p>
