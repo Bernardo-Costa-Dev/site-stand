@@ -262,6 +262,12 @@ export default async function VehiclePage({ params }: Props) {
                 />
 
                 <SpecCard
+                  icon={<CarFront className="h-5 w-5" />}
+                  label="Modelo"
+                  value={vehicle.model || "—"}
+                />
+
+                <SpecCard
                   icon={<BadgeEuro className="h-5 w-5" />}
                   label="Preço"
                   value="Sob Consulta"
@@ -273,17 +279,20 @@ export default async function VehiclePage({ params }: Props) {
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="block rounded-[28px] bg-emerald-900 p-6 text-white shadow-sm transition hover:bg-emerald-600"
+                  className="block rounded-[28px] bg-emerald-900 p-6 text-white shadow-sm transition hover:bg-emerald-600 sm:col-span-2"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 rounded-full bg-white/10 p-2">
+                  <div className="flex items-center justify-center gap-3 text-center">
+                    <div className="rounded-full bg-white/10 p-2">
                       <MessageCircle className="h-5 w-5 text-emerald-400" />
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold leading-tight">
+                      <h3 className="text-xl font-semibold leading-tight">
                         Contactar para mais informações
                       </h3>
+                      <p className="mt-2 text-sm text-zinc-200">
+                        Pedir preço por WhatsApp
+                      </p>
                     </div>
                   </div>
                 </a>
