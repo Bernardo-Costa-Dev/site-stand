@@ -3,6 +3,8 @@ import Link from "next/link";
 import { client } from "@/lib/sanity/client";
 import { urlFor } from "@/lib/sanity/image";
 
+export const dynamic = "force-dynamic";
+
 type Vehicle = {
   _id: string;
   title: string;

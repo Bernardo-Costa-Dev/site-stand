@@ -170,9 +170,9 @@ export default function ReboquePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="rounded-[28px] bg-zinc-950 px-6 py-10 text-white shadow-sm sm:px-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+      {/* <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="rounded-[28px] bg-zinc-950 px-6 py-10 text-white shadow-sm sm:px-10"> */}
+          {/* <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
             Contacto rápido
           </p>
 
@@ -208,6 +208,60 @@ export default function ReboquePage() {
             >
               Ver contactos
             </Link>
+          </div> */}
+        {/* </div>
+      </section> */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="relative overflow-hidden rounded-[28px] bg-zinc-950 px-6 py-10 text-white shadow-sm sm:px-10 min-h-[420px]">
+          <Image
+            src="/hero-reboque.jpeg"
+            alt="Serviço de reboque S.I Auto"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+
+          <div className="absolute inset-0 bg-zinc-950/55" />
+
+          <div className="relative z-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+              Contacto rápido
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold tracking-tight">
+              A sua viatura encontra-se sem seguro automóvel ou imobilizada?
+            </h2>
+
+            <p className="mt-4 max-w-3xl text-zinc-200">
+              Contacte-nos para assistência imediata. Estamos disponíveis para
+              responder com rapidez e profissionalismo.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="tel:+351915382782"
+                className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
+              >
+                Ligar agora
+              </a>
+
+              <a
+                href="https://wa.me/351925511320"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-500"
+              >
+                Falar por WhatsApp
+              </a>
+
+              <Link
+                href="/contatos"
+                className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+              >
+                Ver contactos
+              </Link>
+            </div>
           </div>
         </div>
       </section>
