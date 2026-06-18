@@ -74,9 +74,9 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="relative overflow-hidden">
-        <div className="object-cover opacity-40">
+        <div className="object-cover opacity-85">
           <Image
-            src="/oficina-hero2.jpg"
+            src="/stand-image.png"
             alt="Oficina S.I Auto"
             fill
             className="object-cover"
@@ -89,19 +89,19 @@ export default async function Home() {
 
         <div className="relative mx-auto grid min-h-[78vh] max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.65em] text-emerald-300 text-center">
+            <p className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:1px_#04802f] md:text-5xl lg:text-6xl text-center">
               O seu stand automóvel
             </p>
 
-            <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:1px_#04802f] md:text-5xl lg:text-6xl text-center">
+            {/* <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-white [-webkit-text-stroke:1px_#04802f] md:text-5xl lg:text-6xl text-center">
               Stock Multimarcas para qualquer ocasião
-            </h1>
+            </h1> */}
 
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-200">
              A S.I Auto dispõe de um vasto stock multimarcas, com acompanhamento personalizado e preparação cuidada de cada viatura para garantir confiança na entrega.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/viaturas"
                 className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-500"
@@ -117,11 +117,11 @@ export default async function Home() {
               </Link>
             </div>
 
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+            <div className="mt-10 grid max-w-xl grid-cols-2 gap-4">
+              {/* <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
                 <p className="text-2xl font-bold text-white">{homepageVehicles.length} Novas Entradas</p>
                 <p className="mt-1 text-sm text-zinc-300">Novas Entradas</p>
-              </div>
+              </div> */}
               <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
                 <p className="text-2xl font-bold text-white">Garantia Stand</p>
                 <p className="mt-1 text-sm text-zinc-300">Assistencia pós-venda</p>
@@ -222,22 +222,22 @@ export default async function Home() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
+            {/* <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
               Stock disponível
-            </p>
+            </p> */}
             <h2 className="mt-2 text-3xl font-bold tracking-tight">
               Viaturas em destaque
             </h2>
-            <p className="mt-3 max-w-2xl text-zinc-600">
+            {/* <p className="mt-3 max-w-2xl text-zinc-600">
               As nossas viaturas selecionadas, com informação detalhada e contacto facilitado.
-            </p>
+            </p> */}
           </div>
 
           <Link
             href="/viaturas"
             className="hidden rounded-xl border border-zinc-300 px-4 py-2.5 text-sm font-medium hover:bg-zinc-50 md:inline-flex"
           >
-            Ver todas
+            Ver todas as viaturas
           </Link>
         </div>
 
