@@ -31,10 +31,10 @@ export default function RootLayout({
         </div>
 
         <div className="relative z-10">
-          <SiteHeader />
+          {/* <SiteHeader /> */}
           {children}
-          <SiteFooter />
-          <WhatsAppFloat />
+          {/* <SiteFooter /> */}
+          {/* <WhatsAppFloat /> */}
         </div>
       </body>
     </html>
