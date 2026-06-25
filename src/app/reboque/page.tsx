@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next"
 
 const services = [
   "Prestação de serviços de reboque 24/7",

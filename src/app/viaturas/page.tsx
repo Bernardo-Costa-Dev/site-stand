@@ -4,6 +4,7 @@ import type { SanityImageSource } from "@sanity/image-url";
 import { client } from "@/lib/sanity/client";
 import { urlFor } from "@/lib/sanity/image";
 import { VehicleFiltersBar } from "@/components/vehicle-filters-bar";
+import { Analytics } from "@vercel/analytics/next"
 
 type Vehicle = {
   _id: string;

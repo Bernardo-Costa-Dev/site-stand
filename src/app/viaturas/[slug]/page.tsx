@@ -19,6 +19,7 @@ import { client } from "@/lib/sanity/client";
 import { urlFor } from "@/lib/sanity/image";
 import { VehicleGallery } from "@/components/vehicle-gallery";
 import { ChessKnight } from "lucide-react";
+import { Analytics } from "@vercel/analytics/next"
 
 
 

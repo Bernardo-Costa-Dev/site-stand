@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { OficinaBookingForm } from "@/components/oficina-booking-form";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next"
 
 const services = [
   {

@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next"
+
 function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
