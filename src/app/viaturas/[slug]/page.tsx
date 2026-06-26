@@ -110,7 +110,7 @@ export default async function VehiclePage({ params }: Props) {
     ) ?? [];
 
     const vehicleUrl = vehicle.slug?.current
-  ? `https://teudominio.pt/viaturas/${vehicle.slug.current}`
+  ? `https://si-auto.com/viaturas/${vehicle.slug.current}`
   : "Link indisponível";
 
   return (
