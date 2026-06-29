@@ -67,6 +67,49 @@ function InstagramIcon() {
   );
 }
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  name: "S.I Auto",
+  legalName: "SOLID INTEREST - Comércio Auto Unipessoal Lda.",
+  url: "https://www.si-auto.com",
+  telephone: "+351915382782",
+  image: "https://www.si-auto.com/logo-siauto.png",
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PT",
+    addressLocality: "Caldas da Rainha",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:30",
+    },
+  ],
+  department: [
+    {
+      "@type": "AutoRepair",
+      name: "Oficina S.I Auto",
+      telephone: "+351915382782",
+    },
+    {
+      "@type": "AutomotiveBusiness",
+      name: "Serviço de Reboque S.I Auto",
+      telephone: "+351925511320",
+    },
+  ],
+};
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(localBusinessSchema),
+  }}
+/>
+
 export default async function Home() {
   const homepageVehicles = await client.fetch<Vehicle[]>(vehiclesQuery);
   const heroVehicle = homepageVehicles[0] || null;

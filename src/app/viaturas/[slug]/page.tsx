@@ -20,6 +20,7 @@ import { urlFor } from "@/lib/sanity/image";
 import { VehicleGallery } from "@/components/vehicle-gallery";
 import { ChessKnight } from "lucide-react";
 import { Analytics } from "@vercel/analytics/next"
+import type { Metadata } from "next";
 
 
 
@@ -74,6 +75,45 @@ type Props = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const vehicle = await client.fetch<Vehicle | null>(
+    `
+      *[_type == "vehicle" && slug.current == $slug][0] {
+        title,
+        brand,
+        model,
+        year,
+        fuel,
+        images
+      }
+    `,
+    { slug }
+  );
+
+  if (!vehicle) {
+    return {
+      title: "Viatura não encontrada",
+    };
+  }
+
+  return {
+    title: `${vehicle.title} à venda`,
+    description: `${vehicle.brand || ""} ${vehicle.model || ""} ${
+      vehicle.year || ""
+    } disponível na S.I Auto. Consulte detalhes e contacte-nos para mais informações.`,
+    alternates: {
+      canonical: `https://www.si-auto.com/viaturas/${slug}`,
+    },
+    openGraph: {
+      title: `${vehicle.title} | S.I Auto`,
+      description: `Viatura disponível na S.I Auto. Contacte-nos para mais informações.`,
+      type: "website",
+    },
+  };
+}
 
 function SpecCard({
   icon,

@@ -7,8 +7,35 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
-  title: "S.I Auto | Solid Interest",
-  description: "Stand automóvel e oficina com catálogo de viaturas e contacto direto.",
+  metadataBase: new URL("https://www.si-auto.com"),
+  title: {
+    default: "S.I Auto | Stand Automóvel, Oficina e Reboque",
+    template: "%s | S.I Auto",
+  },
+  description:
+    "S.I Auto é um stand automóvel com viaturas multimarcas, oficina automóvel e serviço de reboque. Consulte viaturas disponíveis e contacte-nos.",
+  keywords: [
+    "S.I Auto",
+    "stand automóvel",
+    "stand automóvel Caldas da Rainha",
+    "carros usados",
+    "viaturas usadas",
+    "oficina automóvel",
+    "reboque",
+    "reboque 24h",
+  ],
+  openGraph: {
+    title: "S.I Auto | Stand Automóvel, Oficina e Reboque",
+    description:
+      "Viaturas multimarcas, oficina automóvel e serviço de reboque.",
+    url: "https://www.si-auto.com",
+    siteName: "S.I Auto",
+    locale: "pt_PT",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.si-auto.com",
+  },
 };
 
 export default function RootLayout({
